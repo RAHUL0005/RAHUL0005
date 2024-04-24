@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Task</title>
+
+    <style>
+      body {
+  font-family: 'Arial', sans-serif;
+  color: blue;
+  background-image: url('{% static "wallpaperflare.com_wallpaper (1).jpg" %}');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+background-color: rgba(255, 255, 255, 0.5);  mix-blend-mode: overlay
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+form {
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            <!-- background-image: url('{% static "wallpaperflare.com_wallpaper (6).jpg" %}'); -->
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+    <h2>Create Task</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_ul }}
+        <button type="submit">Save Task</button>
+    </form>
+    <a href="{% url 'task_list' %}">Back to Task List</a>
+</body>
+</html>

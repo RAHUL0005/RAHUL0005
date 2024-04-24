@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management</title>
+    {% load static %}
+    <!-- Add your custom CSS styles here -->
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-align: center;
+            background-image: url('{% static "wallpaperflare.com_wallpaper (1).jpg" %}');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh; /* Make the body take up the full viewport height */
+            position: relative;
+            color: Black;
+        }
+
+        h1 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+            margin-bottom: 20px; /* Add margin to the bottom of h1 */
+        }
+
+        a {
+            display: block;
+            background-color: #4CAF50;
+            color: Black;
+            padding: 10px 15px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Task Management</h1>
+
+    <!-- Leave a line after h1 -->
+    <a href="{% url 'task_list' %}">Back to Task List</a>
+</body>
+</html>
